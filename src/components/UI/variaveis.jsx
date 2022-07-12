@@ -1,8 +1,8 @@
 /*CORES*/
 export const azul = "#344966";
 export const azulclaro = "#BFCDE0";
-export const vermelho = "#903549";
-export const coral = "#f08080";
+export const corPrimaria = "#903549";
+export const corSecundaria = "#ab4949";
 export const preto = "#1F1F1F";
 export const branco = "#F1F1F1";
 export const fundo = "#E0E0E2";

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import FotoPerfil from "../img/Fotosemfundo.png";
+import Psicanalise from "../img/psicanalise.jpg";
 
 import { tablet } from "../components/UI/variaveis";
 
@@ -8,13 +8,13 @@ import { fundo } from "../components/UI/variaveis"; //CORES
 
 const SobreSection = styled.section`
   height: 92vh;
-  width: 100%;
+  width: 90%;
   background-color: ${fundo};
-  margin: 0 0 25px 0;
+  margin: 0 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   @media screen and (max-width: ${tablet}) {
     height: auto;
     flex-direction: column;
@@ -33,7 +33,7 @@ const DivPerfil = styled.div`
 
 const DivTexto = styled(DivPerfil)`
   width: 70%;
-  margin: 0 80px 0 20px;
+  margin: 0 80px 0 100px;
   line-height: 1.8rem;
   font-family: sans-serif;
   @media screen and (max-width: ${tablet}) {
@@ -42,15 +42,12 @@ const DivTexto = styled(DivPerfil)`
   }
 `;
 const ImgPerfil = styled.img`
-  margin: 50px 0 25px 0;
+  width: 100%;
 `;
 
-export default function Sobre() {
+export default function Promocao() {
   return (
-    <SobreSection id="sobre">
-      <DivPerfil>
-        <ImgPerfil src={FotoPerfil} alt={FotoPerfil} />
-      </DivPerfil>
+    <SobreSection id="promocao">
       <DivTexto>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -62,6 +59,9 @@ export default function Sobre() {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </DivTexto>
+      <DivPerfil>
+        <ImgPerfil src={Psicanalise} alt={Psicanalise} />
+      </DivPerfil>
     </SobreSection>
   );
 }

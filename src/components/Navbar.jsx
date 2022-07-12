@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { branco, vermelho, coral } from "./UI/variaveis";
+import { branco, corPrimaria, corSecundaria } from "./UI/variaveis";
 import { barlow, sansserif } from "./UI/variaveis";
 import { tablet } from "./UI/variaveis";
 import Logo from "../img/Logo_pladakjj.png";
@@ -9,7 +9,7 @@ import MenuHamburguer from "./UI/MenuHamburguer";
 export const Nav = styled.nav`
   width: 100%;
   height: 8vh;
-  background-color: ${vermelho};
+  background-color: ${corPrimaria};
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
@@ -21,6 +21,10 @@ export const Nav = styled.nav`
   position: fixed;
   top: 0;
   z-index: 5;
+
+  .logo{
+    margin: 0 20px;
+  }
 
   ul {
     display: flex;
@@ -38,9 +42,10 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: center;
     align-items: center;
+    
     &:hover {
       transition: 500ms;
-      background-color: ${coral};
+      background-color: ${corSecundaria};
     }
   }
 
@@ -49,6 +54,8 @@ export const Nav = styled.nav`
     cursor: pointer;
   }
 
+
+
   @media screen and (max-width: ${tablet}) {
     ul {
       position: absolute;
@@ -56,12 +63,14 @@ export const Nav = styled.nav`
       right: 0;
       width: 100vw;
       height: 92vh;
-      background: ${vermelho};
+      background: ${corPrimaria};
       flex-direction: column;
       justify-content: center;
       align-items: center;
       transform: translateX(100%);
+
     }
+
 
     li {
       margin: 20px 0;
@@ -73,6 +82,10 @@ export const Nav = styled.nav`
 
     .menuOpen {
       transform: translateX(0);
+      transition: 500ms;
+    }
+    .menuClose {
+      transform: translateX(100%);
       transition: 500ms;
     }
   }
@@ -94,8 +107,8 @@ export default function Navbar() {
       <div className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)}>
         <MenuHamburguer />
       </div>
-      <Img src={Logo} alt="" />
-      <ul className={menuOpen ? "nav-list menuOpen" : "nav-list"}>
+      <Img className="logo" src={Logo} alt="Logo do Plada Katia" />
+      <ul className={menuOpen ? "nav-list menuOpen" : "nav-list menuClose"}>
         <li>
           <a href="#principal" onClick={() => setMenuOpen(!menuOpen)}>
             Principal
@@ -106,15 +119,21 @@ export default function Navbar() {
             Sobre
           </a>
         </li>
-        <li>Terapias</li>
-        <li>Psicanálise</li>
-        <li>Coach</li>
-        <li>Reiki</li>
         <li>
+          <a href="#terapia" onClick={() => setMenuOpen(!menuOpen)}>
+            Terapia
+          </a>
+        </li>
+        <li>
+          <a href="#promocao" onClick={() => setMenuOpen(!menuOpen)}>
+            Promoção
+          </a>
+        </li>
+        {/* <li>
           <a href="#contatos" onClick={() => setMenuOpen(!menuOpen)}>
             Contatos
           </a>
-        </li>
+        </li> */}
       </ul>
     </Nav>
   );

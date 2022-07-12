@@ -5,16 +5,16 @@ import BannerGustavocrs from "../img/Loguts.png";
 import { BsWhatsapp, BsFacebook, BsInstagram } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 
-import { vermelho, branco, coral } from "./UI/variaveis"; //CORES
+import { corPrimaria, branco, corSecundaria } from "./UI/variaveis"; //CORES
 import { barlow, sansserif } from "./UI/variaveis"; //FONTES
-import { mobile, tablet } from "./UI/variaveis"; //RESPONSIVIDADE
+import { tablet } from "./UI/variaveis"; //RESPONSIVIDADE
 
 const Foo = styled.footer`
   display: flex;
   justify-content: space-around;
   height: 125px;
   width: 100%;
-  background-color: ${vermelho};
+  background-color: ${corPrimaria};
   color: ${branco};
   font-family: ${(barlow, sansserif)};
 
@@ -52,7 +52,7 @@ const FooterDivIcons = styled(FooterDiv)`
     cursor: pointer;
   }
   .icons:hover {
-    color: ${coral};
+    color: ${corSecundaria};
   }
 
   @media screen and (max-width: ${tablet}) {
